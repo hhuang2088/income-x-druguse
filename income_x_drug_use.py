@@ -8,7 +8,7 @@ Created on Sun Sep 27 16:37:32 2015
 import pandas 
 import numpy
 
-data = pandas.read_csv('nesarc_pds.csv', low_memory=False)
+data = pandas.read_csv('/Users/raymondhuang/projects/nesarc_pds.csv', low_memory=False)
 
 data['S1Q10B'] = data['S1Q10B'].convert_objects(convert_numeric=True)
 data['DGSTATUS'] = data['DGSTATUS'].convert_objects(convert_numeric=True)
@@ -198,7 +198,7 @@ print('\n')
 
 print("percentages for S3BD10Q2B - USE OF OTHER DRUG 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 4=NEVER")
-p13 = data['S3BD10Q2B'].value_counts(sort=False, normalize=True)
+p13 = ['S3BD10Q2B'].value_counts(sort=False, normalize=True)
 print (p13)
 
 
