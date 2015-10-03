@@ -26,6 +26,16 @@ data['S3BD10Q2B'] = data['S3BD10Q2B'].convert_objects(convert_numeric=True)
 
 #Subset Current Drug Users 
 sub1 = data[(data["DGSTATUS"]==1)]
+sub2 = sub1.copy()
+
+#Replace 'unknown' (coded as 9) responses with NA responses 
+sub2['S3BD1Q2B'] = sub2['S3BD1Q2B'].replace(9, numpy.nan)
+sub2['S3BD2Q2B'] = sub2['S3BD2Q2B'].replace(9, numpy.nan)
+sub2['S3BD3Q2B'] = sub2['S3BD3Q2B'].replace(9, numpy.nan)
+sub2['S3BD4Q2B'] = sub2['S3BD4Q2B'].replace(9, numpy.nan)
+sub2['S3BD5Q2B'] = sub2['S3BD5Q2B'].replace(9, numpy.nan)
+sub2['S3BD7Q2B'] = sub2['S3BD7Q2B'].replace(9, numpy.nan)
+
 print("Total Respondents:", len(data))
 print("Total Columns:", len(data.columns))
 print("Total Current Drug Users:", len(sub1))
@@ -53,23 +63,25 @@ income_ranges = """
  17. $100,000 or more
  """
 
+#
+
 # Display income_range categories
 print("counts for S1Q10B - TOTAL PERSONAL INCOME IN LAST 12 MONTHS: CATEGORY")
 print(income_ranges)
 print('\n')
 
 # Display income_ranges of drug users 
-c1 = sub1.groupby('S1Q10B').size()
+c1 = sub2.groupby('S1Q10B').size()
 print (c1)
 print('\n')
 
 print("frequencies for S1Q10B - TOTAL PERSONAL INCOME IN LAST 12 MONTHS: CATEGORY")
-p1 = sub1.groupby('S1Q10B').size() / len(sub1)
+p1 = sub2.groupby('S1Q10B').size() / len(sub1)
 print (p1)
 print('\n')
 
 print("percentages for S1Q10B - TOTAL PERSONAL INCOME IN LAST 12 MONTHS: CATEGORY")
-ct1 = sub1.groupby('S1Q10B').size() * 100 / len(sub1)
+ct1 = sub2.groupby('S1Q10B').size() * 100 / len(sub1)
 print(ct1)
 print('\n')
 
@@ -89,123 +101,121 @@ print('\n')
 # Display drug use by respondents by drug type 
 print("counts for S3BD1Q2B - USE OF SEDATIVES 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c3 = sub1['S3BD1Q2B'].value_counts(sort=False)
+c3 = sub2['S3BD1Q2B'].value_counts(sort=False)
 print (c3)
 print('\n')
 
 print("frequencies for S3BD1Q2B - USE OF SEDATIVES 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p3 = sub1['S3BD1Q2B'].value_counts(sort=False, normalize=True)
+p3 = sub2['S3BD1Q2B'].value_counts(sort=False, normalize=True)
 print (p3)
 print('\n')
 
 print("counts for S3BD2Q2B - USE OF TRANQUILIZERS 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c4 = sub1['S3BD2Q2B'].value_counts(sort=False)
+c4 = sub2['S3BD2Q2B'].value_counts(sort=False)
 print (c4)
 print('\n')
 
 print("frequencies for S3BD2Q2B - USE OF TRANQUILIZERS 1=IN THE LAST 12") 
 print("MONTHS, 2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p4 = sub1['S3BD2Q2B'].value_counts(sort=False, normalize=True)
+p4 = sub2['S3BD2Q2B'].value_counts(sort=False, normalize=True)
 print (p4)
 print('\n')
 
 print("counts for S3BD3Q2B - USE OF Opioids 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c5 = sub1['S3BD3Q2B'].value_counts(sort=False)
+c5 = sub2['S3BD3Q2B'].value_counts(sort=False)
 print (c5)
 print('\n')
 
 print("frequencies for S3BD3Q2B - USE OF Opioids 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p5 = sub1['S3BD3Q2B'].value_counts(sort=False, normalize=True)
+p5 = sub2['S3BD3Q2B'].value_counts(sort=False, normalize=True)
 print (p5)
 print('\n')
 
 print("counts for S3BD4Q2B - USE OF Amphetimines 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c6 = sub1['S3BD4Q2B'].value_counts(sort=False)
+c6 = sub2['S3BD4Q2B'].value_counts(sort=False)
 print (c6)
 print('\n')
 
 print("frequencies for S3BD4Q2B - USE OF Amphetimines 1=IN THE LAST 12 Months")
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p6 = sub1['S3BD4Q2B'].value_counts(sort=False, normalize=True)
+p6 = sub2['S3BD4Q2B'].value_counts(sort=False, normalize=True)
 print (p6)
 print('\n')
 
 print("counts for S3BD5Q2B - USE OF Cannabis 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c7 = sub1['S3BD5Q2B'].value_counts(sort=False)
+c7 = sub2['S3BD5Q2B'].value_counts(sort=False)
 print (c7)
 print('\n')
 
 print("frequencies for S3BD5Q2B - USE OF Cannabis 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p7 = sub1['S3BD5Q2B'].value_counts(sort=False, normalize=True)
+p7 = sub2['S3BD5Q2B'].value_counts(sort=False, normalize=True)
 print (p7)
 print('\n')
 
 print("counts for S3BD6Q2B - USE OF Cocaine or Crack 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c8 = sub1['S3BD6Q2B'].value_counts(sort=False)
+c8 = sub2['S3BD6Q2B'].value_counts(sort=False)
 print (c8)
 print('\n')
 
 print("frequencies for S3BD6Q2B - USE OF Cocaine or Crack 1=IN THE LAST 12") 
 print("MONTHS, 2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p9 = sub1['S3BD6Q2B'].value_counts(sort=False, normalize=True)
+p9 = sub2['S3BD6Q2B'].value_counts(sort=False, normalize=True)
 print (p9)
 print('\n')
 
 print("counts for S3BD7Q2B - USE OF Hallucinogens 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c10 = sub1['S3BD7Q2B'].value_counts(sort=False)
+c10 = sub2['S3BD7Q2B'].value_counts(sort=False)
 print (c10)
 print('\n')
 
 print("frequencies for S3BD7Q2B - USE OF Hallucinogens 1=IN THE LAST 12") 
 print("MONTHS, 2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p10 = sub1['S3BD7Q2B'].value_counts(sort=False, normalize=True)
+p10 = sub2['S3BD7Q2B'].value_counts(sort=False, normalize=True)
 print (p10)
 print('\n')
 
 print("counts for S3BD8Q2B - USE OF Inhalents 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c11 = sub1['S3BD8Q2B'].value_counts(sort=False)
+c11 = sub2['S3BD8Q2B'].value_counts(sort=False)
 print (c11)
 print('\n')
 
 print("frequencies for S3BD8Q2B - USE OF Inhalents 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p11 = sub1['S3BD8Q2B'].value_counts(sort=False, normalize=True)
+p11 = sub2['S3BD8Q2B'].value_counts(sort=False, normalize=True)
 print (p11)
 print('\n')
 
 print("counts for S3BD9Q2B - USE OF Heroin 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c12 = sub1['S3BD9Q2B'].value_counts(sort=False)
+c12 = sub2['S3BD9Q2B'].value_counts(sort=False)
 print (c12)
 print('\n')
 
 print("frequencies for S3BD9Q2B - USE OF Heroin 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p12 = sub1['S3BD9Q2B'].value_counts(sort=False, normalize=True)
+p12 = sub2['S3BD9Q2B'].value_counts(sort=False, normalize=True)
 print (p12)
 print('\n')
 
 print("counts for S3BD10Q2B - USE OF OTHER DRUG 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-c13 = sub1['S3BD10Q2B'].value_counts(sort=False)
+c13 = sub2['S3BD10Q2B'].value_counts(sort=False)
 print (c13)
 print('\n')
 
 print("frequencies for S3BD10Q2B - USE OF OTHER DRUG 1=IN THE LAST 12 MONTHS,") 
 print("2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS, 9=UNKOWN")
-p13 = sub1['S3BD10Q2B'].value_counts(sort=False, normalize=True)
+p13 = sub2['S3BD10Q2B'].value_counts(sort=False, normalize=True)
 print (p13)
-
-
 
 
