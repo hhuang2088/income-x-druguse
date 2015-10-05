@@ -84,19 +84,19 @@ frequencies for DGSTATUS - Drug Use Status, Current User=1, Ex-User=2
 2.    0.154990     
 3.    0.787901   
 
-counts for S3BD5Q2B - USE OF Cannabis 1=IN THE LAST 12 MONTHS,
-2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS
+counts for S3BD5Q2B - Use of Cannabis 1=In the last 12 months,
+2=Prior to last 12 months, 3=Both time Periods
 
 1.    98
 2.    427
 3.    1505
-dtype: int64
 
-frequencies for S3BD5Q2B - USE OF Cannabis 1=IN THE LAST 12 MONTHS,
-2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS
-1.    0.039821
-2.    0.173507
-3.    0.611540
+frequencies for S3BD5Q2B - Use of Cannabis 1=In the last 12 months,
+2=Prior to last 12 months, 3=Both time Periods
+
+1. 0.039821
+2. 0.173507
+3. 0.611540
 
 <p>
 Based on these findings, I find that 42.54% of people who reported themselves
@@ -115,5 +115,6 @@ inconducive to my analysis.
 <b>Dataset Codebook URL:</b> https://d396qusza40orc.cloudfront.net/phoenixassets/data-management-visualization/NESARC%20Wave%201%20Code%20Book%20w%20toc.pdf
 
 <b>Tumblr Blog with Overview of Study:</b> https://d396qusza40orc.cloudfront.net/phoenixassets/data-management-visualization/NESARC%20Wave%201%20Code%20Book%20w%20toc.pdf
+
 
 
