@@ -1,7 +1,7 @@
 <h1>Data Analysis of Drug Use Across Income Ranges</h1>
 
 <h2>Summary</h2>
-Given my current analysis, these are some of the figres that I had found:
+Given my current analysis, these are some of the figures that I had found:
 
 Total Respondents: 43093
 Total Current Drug Users: 2461
@@ -31,64 +31,89 @@ counts for S1Q10B(for drug users) - TOTAL PERSONAL INCOME IN LAST 12 MONTHS: CAT
 frequencies for S1Q10B(for drug users) - TOTAL PERSONAL INCOME IN LAST 12
 MONTHS: CATEGORY 
 
-0     0.047135  
-1     0.138155   
-2     0.099553    
-3     0.056481  
-4     0.084112  
-5     0.041853    
-6     0.101585   
-7     0.082487   
-8     0.075173  
-9     0.060138  
-10    0.047542  
-11    0.056481  
-12    0.036570  
-13    0.022349  
-14    0.013409  
-15    0.009752  
-16    0.004470  
-17    0.022755 
+0.     0.047135  
+1.     0.138155   
+2.     0.099553    
+3.     0.056481  
+4.     0.084112  
+5.     0.041853    
+6.     0.101585   
+7.     0.082487   
+8.     0.075173  
+9.     0.060138  
+10.    0.047542  
+11.    0.056481  
+12.    0.036570  
+13.    0.022349  
+14.    0.013409  
+15.    0.009752  
+16.    0.004470  
+17.    0.022755 
 
 
 percentages for S1Q10B(for drug users) - TOTAL PERSONAL INCOME IN LAST 12 MONTHS: CATEGORY       
-0      4.713531    
-1     13.815522   
-2      9.955303   
-3      5.648111   
-4      8.411215   
-5      4.185291   
-6     10.158472    
-7      8.248679    
-8      7.517269    
-9      6.013816   
-10     4.754165   
-11     5.648111   
-12     3.657050    
-13     2.234864    
-14     1.340918    
-15     0.975213    
-16     0.446973    
-17     2.275498
-
-
+0.      4.713531    
+1.     13.815522   
+2.      9.955303   
+3.      5.648111   
+4.      8.411215   
+5.      4.185291   
+6.     10.158472    
+7.      8.248679    
+8.      7.517269    
+9.      6.013816   
+10.     4.754165   
+11.     5.648111   
+12.     3.657050    
+13.     2.234864    
+14.     1.340918    
+15.     0.975213    
+16.     0.446973    
+17.     2.275498
 
 counts for DGSTATUS - Drug Use Status, Current User=1, Ex-User=2
 3=Lifetime nondrug user   
-1     2461    
-2     6679    
-3    33953     
+1.     2461    
+2.     6679    
+3.    33953     
 
 
 frequencies for DGSTATUS - Drug Use Status, Current User=1, Ex-User=2
 3=Lifetime nondrug user      
-1    0.057109     
-2    0.154990     
-3    0.787901     
+1.    0.057109     
+2.    0.154990     
+3.    0.787901   
+
+counts for S3BD5Q2B - USE OF Cannabis 1=IN THE LAST 12 MONTHS,
+2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS
+1      98
+2     427
+3    1505
+dtype: int64
+
+frequencies for S3BD5Q2B - USE OF Cannabis 1=IN THE LAST 12 MONTHS,
+2=PRIOR TO LAST 12 MONTHS, 3=BOTH TIME PERIODS
+1    0.039821
+2    0.173507
+3    0.611540
+dtype: float64  
+
+<p>
+Based on these findings, I find that 42.54% of people who reported themselves
+as current drug users at the time the survey was taken had personal incomes of 
+$12,999 or less, with the most popular drug used being cannabis, with 61.15% of
+drug user respondents having used it both prior to and within the last twelve
+months before their responses had been recorded. 
+
+In my analysis of drug use patterns of current drug users at the time this data
+was compiled, I had omitted "unknown" responses, as those responses were 
+inconducive to my analysis.
+</p>
 
 <b>Dataset URL:</b> https://d396qusza40orc.cloudfront.net/phoenixassets/data-management-visualization/nesarc_pds.csv
 
 <b>Dataset Codebook URL:</b> https://d396qusza40orc.cloudfront.net/phoenixassets/data-management-visualization/NESARC%20Wave%201%20Code%20Book%20w%20toc.pdf
 
 <b>Tumblr Blog with Overview of Study:</b> https://d396qusza40orc.cloudfront.net/phoenixassets/data-management-visualization/NESARC%20Wave%201%20Code%20Book%20w%20toc.pdf
+
 
